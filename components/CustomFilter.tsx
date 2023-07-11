@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomFilter = () => {
+const CustomFilter = ({ title }: any) => {
   return <div>CustomFilter</div>;
 };
 
