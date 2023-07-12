@@ -48,16 +48,10 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   return `${url}`;
 };
 
-// export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-//   const url = new URL("http://api.carsxe.com/images");
-//   const { make, model, year } = car;
+export const updateSearchParams = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+  searchParams.set(type, value);
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
 
-//   url.searchParams.append("key", "");
-//   url.searchParams.append("make", make);
-//   url.searchParams.append("modelFamily", model.split(" ")[0]);
-//   url.searchParams.append("zoomType", "fullscreen");
-//   url.searchParams.append("modelYear", `${year}`);
-//   url.searchParams.append("angle", `${angle}`);
-
-//   return `${url}`;
-// };
+  return newPathName;
+};
